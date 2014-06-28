@@ -1,0 +1,28 @@
+<com.matthewlogan.reversedrawerlayout.library.ReverseDrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/reverse_drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/bottom_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#999">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="This is the drawer content"
+            android:textColor="#fff"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="right" />
+
+</com.matthewlogan.reversedrawerlayout.library.ReverseDrawerLayout>
