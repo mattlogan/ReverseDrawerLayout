@@ -236,7 +236,7 @@ public class ReverseDrawerLayout extends ViewGroup {
 
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ReverseDrawerLayout, 0, 0);
         try {
-            mDrawerOverhang = a.getColor(R.styleable.ReverseDrawerLayout_drawerOverhang,
+            mDrawerOverhang = (int) a.getDimension(R.styleable.ReverseDrawerLayout_drawerOverhang,
                     (int) (DRAWER_OVERHANG * density + 0.5f));
         } finally {
             a.recycle();
