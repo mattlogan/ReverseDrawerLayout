@@ -50,6 +50,10 @@ This the layout XML file used in the [sample app](https://github.com/mattlogan/R
 
 See the [sample app](https://github.com/mattlogan/ReverseDrawerLayout/tree/master/app) for a standard use of this library.
 
+## Todo
+
+Publish to Maven Central.  If you know how to do this, feel free to help me out!
+
 ## License
 
 The MIT License (MIT)
