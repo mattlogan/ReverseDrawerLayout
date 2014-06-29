@@ -29,7 +29,6 @@ import android.os.Parcelable;
 import android.os.SystemClock;
 import android.support.v4.view.AccessibilityDelegateCompat;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.KeyEventCompat;
 import android.support.v4.view.MotionEventCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewGroupCompat;
@@ -37,7 +36,6 @@ import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.support.v4.widget.ViewDragHelper;
 import android.util.AttributeSet;
 import android.view.Gravity;
-import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -1517,10 +1515,10 @@ public class ReverseDrawerLayout extends ViewGroup {
         @Override
         public int clampViewPositionHorizontal(View child, int left, int dx) {
             if (checkDrawerViewAbsoluteGravity(child, Gravity.LEFT)) {
-                return Math.max(-child.getWidth() + mDrawerOverhang, Math.min(left, 0));
+                return Math.max(-child.getWidth(), Math.min(left, 0));
             } else {
                 final int width = getWidth();
-                return Math.max(width - child.getWidth() - mDrawerOverhang, Math.min(left, width));
+                return Math.max(width - child.getWidth(), Math.min(left, width));
             }
         }
 
