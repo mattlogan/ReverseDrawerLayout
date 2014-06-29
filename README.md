@@ -12,6 +12,8 @@ This is an example of a layout file for an activity that use ReverseDrawerLayout
 
 This is a fork of [Android DrawerLayout](https://developer.android.com/reference/android/support/v4/widget/DrawerLayout.html), so all the [documentation](https://developer.android.com/reference/android/support/v4/widget/DrawerLayout.html) for that should apply here as well.
 
+This the layout XML file used in the [sample app](https://github.com/mattlogan/ReverseDrawerLayout/tree/master/app).
+
 ```xml
 <!--Use the namespace "http://schemas.android.com/apk/res-auto" to set the custom-->
 <!--attribute, drawerOverhang.  This determines how much of the main content view-->
@@ -26,30 +28,20 @@ This is a fork of [Android DrawerLayout](https://developer.android.com/reference
     <!--The first child of ReverseDrawerLayout is the navigation (or other) content,-->
     <!--which will initially be hidden.  As the second child of ReverseDrawerLayout-->
     <!--(the main content view) slides out, this view will be revealed underneath it.-->
-    <RelativeLayout
+    <ListView
         android:id="@+id/bottom_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#999">
+        android:background="#666"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="This is the drawer content"
-            android:textColor="#fff"
-            android:textSize="30sp" />
-
-    </RelativeLayout>
-
-    <!--The second child of ReverseDrawerLayout is the main content view.  This can be a-->
-    <!--container for a fragment or any other type of view.  This will slide in and out-->
-    <!--to reveal the navigation (or other) content underneath.-->
-    <FrameLayout
-        android:id="@+id/fragment_container"
+    <!--The second child of ReverseDrawerLayout is the main content view.  This will
+     slide in and out to reveal the navigation (or other) content underneath.-->
+    <ImageView
+        android:id="@+id/top_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="right" />
+        android:layout_gravity="right"
+        android:scaleType="centerCrop" />
 
 </com.matthewlogan.reversedrawerlayout.library.ReverseDrawerLayout>
 ```
