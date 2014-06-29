@@ -3,8 +3,8 @@ ReverseDrawerLayout
 
 Modified Android DrawerLayout -- main content view goes on drawer, navigation content lies underneath
 
-<img src="https://raw.githubusercontent.com/mattlogan/ReverseDrawerLayout/master/github-assets/Screenshot_2014-06-28-23-37-48.png" height="540"/>
-<img src="https://raw.githubusercontent.com/mattlogan/ReverseDrawerLayout/master/github-assets/Screenshot_2014-06-28-23-37-52.png" height="540" align="right"/>
+<img src="https://raw.githubusercontent.com/mattlogan/ReverseDrawerLayout/master/github-assets/showing_top_view.png" height="540"/>
+<img src="https://raw.githubusercontent.com/mattlogan/ReverseDrawerLayout/master/github-assets/showing_bottom_view.png" height="540" align="right"/>
 
 ## How to Use
 
