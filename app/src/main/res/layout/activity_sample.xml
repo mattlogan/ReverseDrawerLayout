@@ -1,4 +1,6 @@
-<!--Use the namespace "http://schemas.android.com/apk/res-auto" to set the custom--><!--attribute, drawerOverhang.  This determines how much of the main content view--><!--is shown when it slides out to display the navigation view underneath.-->
+<!--Use the namespace "http://schemas.android.com/apk/res-auto" to set the custom-->
+<!--attribute, drawerOverhang.  This determines how much of the main content view-->
+<!--is shown when it slides out to display the navigation view underneath.-->
 <com.matthewlogan.reversedrawerlayout.library.ReverseDrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/reverse_drawer_layout"
