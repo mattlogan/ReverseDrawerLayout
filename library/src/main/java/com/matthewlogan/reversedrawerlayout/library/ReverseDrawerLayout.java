@@ -936,18 +936,12 @@ public class ReverseDrawerLayout extends ViewGroup {
         final boolean interceptForDrag = mLeftDragger.shouldInterceptTouchEvent(ev) |
                 mRightDragger.shouldInterceptTouchEvent(ev);
 
-        boolean interceptForTap = false;
-
         switch (action) {
             case MotionEvent.ACTION_DOWN: {
                 final float x = ev.getX();
                 final float y = ev.getY();
                 mInitialMotionX = x;
                 mInitialMotionY = y;
-                if (mScrimOpacity > 0 &&
-                        isContentView(mLeftDragger.findTopChildUnder((int) x, (int) y))) {
-                    interceptForTap = true;
-                }
                 mDisallowInterceptRequested = false;
                 mChildrenCanceledTouch = false;
                 break;
@@ -970,7 +964,7 @@ public class ReverseDrawerLayout extends ViewGroup {
             }
         }
 
-        return interceptForDrag || interceptForTap || hasPeekingDrawer() || mChildrenCanceledTouch;
+        return interceptForDrag || hasPeekingDrawer() || mChildrenCanceledTouch;
     }
 
     @Override
