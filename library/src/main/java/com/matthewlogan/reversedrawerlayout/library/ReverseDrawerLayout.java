@@ -254,9 +254,6 @@ public class ReverseDrawerLayout extends ViewGroup {
         mRightDragger.setMinVelocity(minVel);
         mRightCallback.setDragger(mRightDragger);
 
-        // So that we can catch the back button
-        setFocusableInTouchMode(true);
-
         ViewCompat.setAccessibilityDelegate(this, new AccessibilityDelegate());
         ViewGroupCompat.setMotionEventSplittingEnabled(this, false);
     }
