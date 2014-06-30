@@ -35,6 +35,7 @@ import android.support.v4.view.ViewGroupCompat;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.support.v4.widget.ViewDragHelper;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -933,12 +934,18 @@ public class ReverseDrawerLayout extends ViewGroup {
         final boolean interceptForDrag = mLeftDragger.shouldInterceptTouchEvent(ev) |
                 mRightDragger.shouldInterceptTouchEvent(ev);
 
+        boolean interceptForTap = false;
+
         switch (action) {
             case MotionEvent.ACTION_DOWN: {
                 final float x = ev.getX();
                 final float y = ev.getY();
                 mInitialMotionX = x;
                 mInitialMotionY = y;
+                if (mScrimOpacity > 0 &&
+                        !isContentView(mLeftDragger.findTopChildUnder((int) x, (int) y))) {
+                    interceptForTap = true;
+                }
                 mChildrenCanceledTouch = false;
                 break;
             }
@@ -959,7 +966,7 @@ public class ReverseDrawerLayout extends ViewGroup {
             }
         }
 
-        return interceptForDrag || hasPeekingDrawer() || mChildrenCanceledTouch;
+        return interceptForDrag || interceptForTap || hasPeekingDrawer() || mChildrenCanceledTouch;
     }
 
     @Override
