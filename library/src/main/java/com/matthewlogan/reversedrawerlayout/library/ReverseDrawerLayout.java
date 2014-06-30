@@ -753,6 +753,7 @@ public class ReverseDrawerLayout extends ViewGroup {
                 if (mFirstLayout) {
                     openDrawer(child);
                 }
+                child.setClickable(true);
 
                 final int childWidth = child.getMeasuredWidth();
                 final int childHeight = child.getMeasuredHeight();
