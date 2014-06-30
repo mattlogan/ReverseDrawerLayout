@@ -23,7 +23,7 @@ This the layout XML file used in the [sample app](https://github.com/mattlogan/R
     android:id="@+id/reverse_drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:drawerOverhang="30dp">
+    app:drawerOverhang="120dp">
 
     <!--The first child of ReverseDrawerLayout is the navigation (or other) content,-->
     <!--which will initially be hidden.  As the second child of ReverseDrawerLayout-->
