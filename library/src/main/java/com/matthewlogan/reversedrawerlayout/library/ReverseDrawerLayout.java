@@ -147,7 +147,6 @@ public class ReverseDrawerLayout extends ViewGroup {
     private boolean mFirstLayout = true;
     private int mLockModeLeft;
     private int mLockModeRight;
-    private boolean mDisallowInterceptRequested;
     private boolean mChildrenCanceledTouch;
 
     private DrawerListener mListener;
@@ -940,7 +939,6 @@ public class ReverseDrawerLayout extends ViewGroup {
                 final float y = ev.getY();
                 mInitialMotionX = x;
                 mInitialMotionY = y;
-                mDisallowInterceptRequested = false;
                 mChildrenCanceledTouch = false;
                 break;
             }
@@ -957,7 +955,6 @@ public class ReverseDrawerLayout extends ViewGroup {
             case MotionEvent.ACTION_CANCEL:
             case MotionEvent.ACTION_UP: {
                 closeDrawers(true);
-                mDisallowInterceptRequested = false;
                 mChildrenCanceledTouch = false;
             }
         }
@@ -979,7 +976,6 @@ public class ReverseDrawerLayout extends ViewGroup {
                 final float y = ev.getY();
                 mInitialMotionX = x;
                 mInitialMotionY = y;
-                mDisallowInterceptRequested = false;
                 mChildrenCanceledTouch = false;
                 break;
             }
@@ -1002,13 +998,11 @@ public class ReverseDrawerLayout extends ViewGroup {
                     }
                 }
                 closeDrawers(peekingOnly);
-                mDisallowInterceptRequested = false;
                 break;
             }
 
             case MotionEvent.ACTION_CANCEL: {
                 closeDrawers(true);
-                mDisallowInterceptRequested = false;
                 mChildrenCanceledTouch = false;
                 break;
             }
@@ -1024,7 +1018,6 @@ public class ReverseDrawerLayout extends ViewGroup {
             // If we have an edge touch we want to skip this and track it for later instead.
             super.requestDisallowInterceptTouchEvent(disallowIntercept);
         }
-        mDisallowInterceptRequested = disallowIntercept;
         if (disallowIntercept) {
             closeDrawers(true);
         }
